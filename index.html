@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Krupakar S Bilichod, cyber security student and creator of zlang, a language for security work.">
+<title>Krupakar S Bilichod | KSB</title>
+<link rel="icon" href="assets/logo-ksb.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top" aria-label="KSB home"><img src="assets/logo-ksb.png" alt=""><span>KSB</span></a>
+  <nav aria-label="Main">
+    <a href="#zlang">zlang</a>
+    <a href="#try">Try it</a>
+    <a href="#screens">Screens</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <time class="clock" data-clock aria-label="Current time in UTC"><span data-date></span><span class="t" data-time>--:--:--</span><span class="z">UTC</span></time>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div>
+      <p class="eyebrow"><span class="dot"></span>Krupakar S Bilichod</p>
+      <h1>Security tools that are simpler, and easier to verify.</h1>
+      <p class="lede">I'm a B.Tech Cyber Security student. I build zlang, a small language for security work, and I'm on the team building Hasfragis, a forensics toolkit.</p>
+      <div class="actions">
+        <a class="btn" href="#try">Try zlang</a>
+        <a class="btn ghost" href="https://github.com/krupakarsb" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+    <figure class="flow" aria-label="A zlang command passing the scope gate, then each tool, then finishing">
+      <svg viewBox="0 0 440 372" role="img">
+        <title>scan, filter and save, passing the scope gate first</title>
+        <path class="wire" d="M220,26 V42 C220,57 150,57 150,76 V92"/>
+        <path class="wire" d="M150,92 V108 C150,123 290,123 290,142 V158"/>
+        <path class="wire" d="M290,158 V174 C290,189 150,189 150,208 V224"/>
+        <path class="wire" d="M150,224 V240 C150,255 290,255 290,274 V290"/>
+        <path class="wire" d="M290,290 V306 C290,321 220,321 220,340 V356"/>
+        <path class="charge" style="--i:0" pathLength="100" d="M220,26 V42 C220,57 150,57 150,76 V92"/>
+        <path class="charge" style="--i:1" pathLength="100" d="M150,92 V108 C150,123 290,123 290,142 V158"/>
+        <path class="charge" style="--i:2" pathLength="100" d="M290,158 V174 C290,189 150,189 150,208 V224"/>
+        <path class="charge" style="--i:3" pathLength="100" d="M150,224 V240 C150,255 290,255 290,274 V290"/>
+        <path class="charge" style="--i:4" pathLength="100" d="M290,290 V306 C290,321 220,321 220,340 V356"/>
+        <circle class="start" cx="220" cy="26" r="6"/><text class="label" x="236" y="30">zlang ›</text>
+        <g class="stage" style="--i:1"><rect x="144" y="86" width="12" height="12" rx="3.5"/><text class="name" x="132" y="86" text-anchor="end">scope</text><text class="tool" x="132" y="100" text-anchor="end">gate</text></g>
+        <g class="stage" style="--i:2"><rect x="284" y="152" width="12" height="12" rx="3.5"/><text class="name" x="308" y="152">scan</text><text class="tool" x="308" y="166">nmap</text></g>
+        <g class="stage" style="--i:3"><rect x="144" y="218" width="12" height="12" rx="3.5"/><text class="name" x="132" y="218" text-anchor="end">filter</text><text class="tool" x="132" y="232" text-anchor="end">built-in</text></g>
+        <g class="stage" style="--i:4"><rect x="284" y="284" width="12" height="12" rx="3.5"/><text class="name" x="308" y="284">save</text><text class="tool" x="308" y="298">built-in</text></g>
+        <g class="end" style="--i:5"><circle class="halo" cx="220" cy="356" r="11"/><circle class="core" cx="220" cy="356" r="10"/><text class="label" x="240" y="360">Finished</text></g>
+      </svg>
+      <figcaption>A real zlang pipeline: every network command passes the scope gate first.</figcaption>
+    </figure>
+  </section>
+
+  <section id="zlang" class="section">
+    <div class="section-head">
+      <span class="logo" role="img" aria-label="zlang logo"></span>
+      <div>
+        <h2>zlang</h2>
+        <p class="lede">A language and console that puts common security tools behind one short, readable syntax, with a safety check in front of every network command.</p>
+      </div>
+    </div>
+    <pre class="sample"><span class="p">zlang ›</span> scan 127.0.0.1 ports common | filter open | save results.csv</pre>
+    <div class="cards">
+      <article><h3>Readable for beginners</h3><p>Short commands that hide tool complexity, such as <code>hash file report.pdf</code> or <code>lookup dns localhost</code>.</p></article>
+      <article><h3>Powerful for veterans</h3><p>Pipelines, variables, <code>.zl</code> scripts, history and Tab completion, in the terminal or the browser.</p></article>
+      <article><h3>Safe by design</h3><p>Network commands only touch targets in a scope file you control. Anything else is refused and logged.</p></article>
+      <article><h3>Tamper-evident log</h3><p>Every action joins a hash chain, so an edited or removed entry is detected. Reports export as PDF, Markdown, CSV and JSON.</p></article>
+    </div>
+    <p class="note">zlang is written in Python with a Flask dashboard that runs on your own machine. The source is private for now.</p>
+  </section>
+
+  <section id="try" class="section">
+    <h2>Try it here</h2>
+    <p class="lede">A small demo of the language, running only in your browser. Nothing you type is sent anywhere. Network commands are switched off here, so try one and see the refusal.</p>
+    <div class="term" data-term>
+      <div class="term-out" data-out aria-live="polite"><p>zlang demo. Type <b>help</b> to see the commands.</p></div>
+      <form class="term-in" data-form autocomplete="off">
+        <label class="prompt" for="term-line">zlang ›</label>
+        <input id="term-line" spellcheck="false" autocapitalize="none" autocomplete="off">
+      </form>
+    </div>
+    <div class="chips" aria-label="Example commands">
+      <button type="button" data-try='hash text "hello ksb!"'>hash text "hello ksb!"</button>
+      <button type="button" data-try='decode base64 "aGVsbG8="'>decode base64 "aGVsbG8="</button>
+      <button type="button" data-try='encode url "a b&amp;c"'>encode url "a b&amp;c"</button>
+      <button type="button" data-try="scan 8.8.8.8">scan 8.8.8.8</button>
+    </div>
+  </section>
+
+  <section id="screens" class="section">
+    <h2>Inside the dashboard</h2>
+    <p class="lede">The zlang dashboard runs locally. These are real screens from it.</p>
+    <div class="shots">
+      <figure class="wide"><img src="assets/shots/dashboard.webp" alt="zlang dashboard showing Ready status and a live pipeline" loading="lazy" width="2160" height="1350"><figcaption>Dashboard: status, tools and your last command as a live pipeline</figcaption></figure>
+      <figure><img src="assets/shots/terminal.webp" alt="zlang web terminal running commands" loading="lazy" width="2160" height="1350"><figcaption>Terminal: zlang commands only, never a system shell</figcaption></figure>
+      <figure><img src="assets/shots/reports.webp" alt="Reports page with a hash-chained activity log" loading="lazy" width="2160" height="1350"><figcaption>Reports: a hash-chained log of every action</figcaption></figure>
+      <figure><img src="assets/shots/toolkit.webp" alt="Toolkit page listing open source repositories" loading="lazy" width="2160" height="1350"><figcaption>Toolkit: open source repositories worth knowing</figcaption></figure>
+      <figure><img src="assets/shots/signin.webp" alt="zlang sign-in page" loading="lazy" width="2160" height="1350"><figcaption>Sign-in: bcrypt passwords, lockout and CSRF protection</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <h2>Work</h2>
+    <div class="work">
+      <article>
+        <span class="logo" role="img" aria-label="zlang logo"></span>
+        <h3>zlang</h3><p class="kind">Personal project</p>
+        <p>A language, interpreter and dashboard for security work, built and run by me.</p>
+      </article>
+      <article>
+        <span class="logo hasfragis" role="img" aria-label="Hasfragis logo"></span>
+        <h3>Hasfragis</h3><p class="kind">Team project, private repository</p>
+        <p>A digital forensics toolkit that makes evidence tamper-evident and checkable. I'm a team member.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p class="lede">For anything about me or zlang.</p>
+    <div class="actions">
+      <a class="btn" href="mailto:krupakarsb@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/krupakarsb" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <p class="mail"><a href="mailto:krupakarsb@gmail.com">krupakarsb@gmail.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Security tools should only be used on systems you own or have permission to test.</p>
+  <p>Names and logos of other projects belong to their owners.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
