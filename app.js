@@ -30,6 +30,8 @@
     hash: 'hash text "text" [sha256|sha512|sha1]   Fingerprint text. In the brackets is an optional choice.',
     encode: 'encode <base64|hex|url> "text"          Encode text.',
     decode: 'decode <base64|hex|url> "text"          Decode text.',
+    generate: "generate password|pin [--length n]    Create a strong random password or PIN.",
+    subnet: "subnet <network>                        Work out a network's range and host count.",
     set: "set <name> = <value>                    Create a variable, then use it as $name.",
     whoami: "whoami                                  Show who you are in this demo.",
     history: "history                                 Show past commands.",
@@ -75,6 +77,11 @@
     if (!(name in vars)) throw new Error(`$${name} is not set. Use: set ${name} = value`);
     return vars[name];
   });
+  const below = (n) => {               // an unbiased whole number from 0 up to n
+    const limit = Math.floor(0x100000000 / n) * n, box = new Uint32Array(1);
+    do { crypto.getRandomValues(box); } while (box[0] >= limit);
+    return box[0] % n;
+  };
   const usage = (name) => { throw new Error("Usage: " + HELP[name].split(/\s{2,}/)[0]); };
 
   function convert(mode, format, value) {
@@ -124,6 +131,29 @@
       if (args.length !== 2) usage(name);
       if (!["base64", "hex", "url"].includes(format)) throw new Error(`Unknown format: ${format}. Choose from base64, hex, url.`);
       print(convert(name, format, args[1]), "ok");
+      return;
+    }
+    if (name === "generate") {
+      const kind = (args[0] || "").toLowerCase();
+      const at = args.indexOf("--length"), length = at > 0 ? Number(args[at + 1]) : (kind === "pin" ? 6 : 20);
+      if (!["password", "pin"].includes(kind)) usage("generate");
+      const [low, high] = kind === "pin" ? [4, 12] : [8, 128];
+      if (!Number.isInteger(length) || length < low || length > high) throw new Error(`Length must be from ${low} to ${high}.`);
+      const pool = kind === "pin" ? "0123456789" : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+      print(Array.from({ length }, () => pool[below(pool.length)]).join(""), "ok");
+      print("Made in your browser. It was not sent or saved.", "dim");
+      return;
+    }
+    if (name === "subnet") {
+      const m = (args[0] || "").match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\/(\d{1,2})$/);
+      if (!m || m.slice(1, 5).some((x) => +x > 255) || +m[5] > 32) throw new Error("Example: subnet 192.168.56.0/24");
+      const prefix = +m[5], ip = m.slice(1, 5).reduce((n, x) => n * 256 + +x, 0), size = 2 ** (32 - prefix), network = Math.floor(ip / size) * size;
+      const dotted = (n) => [24, 16, 8, 0].map((s) => Math.floor(n / 2 ** s) % 256).join(".");
+      const edge = prefix <= 30 ? 1 : 0;
+      print(`network       ${dotted(network)}/${prefix}`);
+      print(`first host    ${dotted(network + edge)}`);
+      print(`last host     ${dotted(network + size - 1 - edge)}`);
+      print(`usable hosts  ${(prefix <= 30 ? size - 2 : size).toLocaleString("en-US")}`);
       return;
     }
     if (name === "set") {
