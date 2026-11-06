@@ -122,3 +122,10 @@ footer p { margin: 0 0 .2rem; }
   .shots { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; }
 }
+
+/* five feature cards: three above two, so none sits alone */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .cards article { grid-column: span 2; }
+  .cards article:nth-child(n + 4) { grid-column: span 3; }
+}
