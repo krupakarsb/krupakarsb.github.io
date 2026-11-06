@@ -63,7 +63,7 @@
       <span class="logo" role="img" aria-label="zlang logo"></span>
       <div>
         <h2>zlang</h2>
-        <p class="lede">One clean front page for security work, with the tools kept behind the curtain: a short, readable language, a console, and a dashboard of everyday tools, with a safety check in front of every network command.</p>
+        <p class="lede">One clean front page for security work, with the tools kept behind the curtain: a short, readable language, a console and a local dashboard, with a safety check in front of every network command.</p>
       </div>
     </div>
     <pre class="sample"><span class="p">zlang ›</span> scan 127.0.0.1 ports common | filter open | save results.csv</pre>
@@ -71,7 +71,6 @@
       <article><h3>Readable for beginners</h3><p>Short commands that hide tool complexity, such as <code>hash file report.pdf</code> or <code>lookup dns localhost</code>.</p></article>
       <article><h3>Powerful for veterans</h3><p>Pipelines, variables, <code>.zl</code> scripts, history and Tab completion, in the terminal or the browser.</p></article>
       <article><h3>Safe by design</h3><p>Network commands only touch targets in a scope file you control. Anything else is refused and logged.</p></article>
-      <article><h3>Tools in one place</h3><p>A password generator, hashing, decoding, file checks and log indicator extraction. Text and files stay in the browser.</p></article>
       <article><h3>Tamper-evident log</h3><p>Every action joins a hash chain, so an edited or removed entry is detected. Reports export as PDF, Markdown, CSV and JSON.</p></article>
     </div>
     <p class="note">zlang is written in Python with a Flask dashboard that runs on your own machine. The source is private for now.</p>
@@ -102,9 +101,8 @@
     <div class="shots">
       <figure class="wide"><img src="assets/shots/dashboard.webp" alt="zlang dashboard showing Ready status and a live pipeline" loading="lazy" width="2160" height="1350"><figcaption>Dashboard: status, tools and your last command as a live pipeline</figcaption></figure>
       <figure><img src="assets/shots/terminal.webp" alt="zlang web terminal running commands" loading="lazy" width="2160" height="1350"><figcaption>Terminal: zlang commands only, never a system shell</figcaption></figure>
-      <figure><img src="assets/shots/tools.webp" alt="zlang Tools page extracting indicators from a log" loading="lazy" width="2160" height="1350"><figcaption>Tools: everyday utilities, here extracting indicators from a log</figcaption></figure>
       <figure><img src="assets/shots/reports.webp" alt="Reports page with a hash-chained activity log" loading="lazy" width="2160" height="1350"><figcaption>Reports: a hash-chained log of every action</figcaption></figure>
-      <figure><img src="assets/shots/toolkit.webp" alt="Toolkit page listing open source repositories" loading="lazy" width="2160" height="1350"><figcaption>Toolkit: open source repositories worth knowing</figcaption></figure>
+      <figure class="wide"><img src="assets/shots/toolkit.webp" alt="Toolkit page listing open source repositories" loading="lazy" width="2160" height="1350"><figcaption>Toolkit: open source repositories worth knowing</figcaption></figure>
     </div>
   </section>
 

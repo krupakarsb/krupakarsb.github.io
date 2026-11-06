@@ -52,9 +52,9 @@ h3 { margin: 0; font-size: 1rem; font-weight: 600; }
 .btn.ghost:hover { border-color: var(--ink); opacity: 1; }
 .section { padding-block: clamp(2.5rem, 6vw, 4rem); border-top: 1px solid var(--rule); }
 .section-head { display: flex; gap: 1.25rem; align-items: flex-start; }
-.logo { display: block; flex: none; width: 3.25rem; height: 3.25rem; background: var(--ink);
-        -webkit-mask: url("assets/logo-zlang.png") center / contain no-repeat; mask: url("assets/logo-zlang.png") center / contain no-repeat; }
-.logo.hasfragis { -webkit-mask-image: url("assets/logo-hasfragis.png"); mask-image: url("assets/logo-hasfragis.png"); }
+.logo { display: block; flex: none; width: 3.25rem; height: 3.25rem; border-radius: 21%; background: url("assets/logo-zlang.png") center / contain no-repeat; }
+.logo.hasfragis { border-radius: 0; box-shadow: none; background: var(--ink);
+        -webkit-mask: url("assets/logo-hasfragis.png") center / contain no-repeat; mask: url("assets/logo-hasfragis.png") center / contain no-repeat; }
 .sample { margin: 1.75rem 0 0; padding: 1rem 1.2rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--glass);
           font: 400 .86rem var(--mono); overflow-x: auto; }
 .sample .p { color: var(--muted); }
@@ -121,11 +121,4 @@ footer p { margin: 0 0 .2rem; }
   .clock [data-date] { display: none; }
   .shots { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; }
-}
-
-/* five feature cards: three above two, so none sits alone */
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .cards article { grid-column: span 2; }
-  .cards article:nth-child(n + 4) { grid-column: span 3; }
 }
