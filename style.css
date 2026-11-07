@@ -122,3 +122,9 @@ footer p { margin: 0 0 .2rem; }
   .shots { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; }
 }
+.logo.zini { -webkit-mask-image: url("assets/logo-zini.png"); mask-image: url("assets/logo-zini.png"); }
+.zini-note { display: flex; gap: 1rem; align-items: center; margin-top: 1.25rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--glass); backdrop-filter: blur(14px); }
+.zini-note .logo { width: 2.5rem; height: 2.5rem; }
+.zini-note p { margin: 0; color: var(--muted); font-size: .92rem; }
+.zini-note b { color: var(--ink); }
+.zini-note .soon { margin-left: .35rem; padding: .05rem .5rem; font-size: .72rem; font-weight: 600; color: var(--warn); border: 1px solid currentColor; border-radius: 99px; }
