@@ -63,17 +63,19 @@
       <span class="logo" role="img" aria-label="zlang logo"></span>
       <div>
         <h2>zlang</h2>
-        <p class="lede">One clean front page for security work, with the tools kept behind the curtain: a short, readable language with a full-screen console, ready-made scripts and a local dashboard, with a safety check in front of every network command.</p>
+        <p class="lede">One clean front page for security work, with the tools kept behind the curtain: a short, readable language with a full-screen console, ready-made scripts and a local dashboard, with a safety check in front of every network command. It installs on Windows as a small tray app.</p>
       </div>
     </div>
     <pre class="sample"><span class="p">zlang ›</span> scan 127.0.0.1 ports common | filter open | save results.csv</pre>
     <div class="cards">
       <article><h3>Readable for beginners</h3><p>Short commands that hide tool complexity, such as <code>hash file report.pdf</code> or <code>lookup dns localhost</code>.</p></article>
-      <article><h3>Powerful for veterans</h3><p>Pipelines, variables, <code>.zl</code> scripts, history and Tab completion, in the terminal or the browser.</p></article>
+      <article><h3>Powerful for veterans</h3><p>Pipelines, variables, functions, modules, <code>.zl</code> scripts and background jobs: end a line with <code>&amp;</code>, then <code>jobs</code> and <code>snipe</code>.</p></article>
       <article><h3>Safe by design</h3><p>Network commands only touch targets in a scope file you control. Anything else is refused and logged.</p></article>
       <article><h3>Tamper-evident log</h3><p>Every action joins a hash chain, so an edited or removed entry is detected. Reports export as PDF, Markdown, CSV and JSON.</p></article>
+      <article><h3>Lockdown and evidence</h3><p><code>mayday</code> cuts the whole install off the network and stops every job. It saves a signed evidence file with secrets stripped, and <code>verify blackbox</code> proves later that nothing changed.</p></article>
+      <article><h3>Proven on real targets</h3><p>Network and web commands are checked against a local lab and permitted public test sites before each release.</p></article>
     </div>
-    <p class="note">zlang is written in Python with a Flask dashboard that runs on your own machine. The source is private for now.</p>
+    <p class="note">Version 0.7.0, 59 commands. zlang is written in Python with a dashboard that runs only on your own machine. The source is private for now.</p>
     <div class="zini-note">
       <span class="logo zini" role="img" aria-label="Zini logo"></span>
       <p><b>Zini</b> <span class="soon">In development</span><br>A planned AI assistant for zlang. It will explain results and help with scripts, but it only suggests: you stay in control of what runs.</p>
@@ -104,8 +106,10 @@
     <p class="lede">The zlang dashboard runs locally. These are real screens from it.</p>
     <div class="shots">
       <figure class="wide"><img src="assets/shots/dashboard.webp" alt="zlang dashboard showing Ready status and a live pipeline" loading="lazy" width="2160" height="1350"><figcaption>Dashboard: status, tools and your last command as a live pipeline</figcaption></figure>
-      <figure><img src="assets/shots/terminal.webp" alt="zlang console running commands" loading="lazy" width="2160" height="1350"><figcaption>Console: zlang commands only, never a system shell</figcaption></figure>
-      <figure><img src="assets/shots/reports.webp" alt="Activity page with a hash-chained log" loading="lazy" width="2160" height="1350"><figcaption>Activity: a hash-chained log of every action</figcaption></figure>
+      <figure><img src="assets/shots/terminal.webp" alt="zlang console with a background ping job in the Jobs panel" loading="lazy" width="2160" height="1350"><figcaption>Console: zlang commands only, with background jobs you can stop</figcaption></figure>
+      <figure><img src="assets/shots/mayday.webp" alt="Console during a lockdown: ping refused, then verify blackbox passing every check" loading="lazy" width="2160" height="1350"><figcaption>Lockdown: network refused, and the evidence file checks out</figcaption></figure>
+      <figure><img src="assets/shots/reports.webp" alt="Activity page during a lockdown, with the BLACKBOX entry in the hash-chained log" loading="lazy" width="2160" height="1350"><figcaption>Activity: a hash-chained log, with the evidence file's hash written in</figcaption></figure>
+      <figure><img src="assets/shots/commands.webp" alt="Commands page listing all 59 commands with search and groups" loading="lazy" width="2160" height="1350"><figcaption>Commands: all 59, built from zlang itself</figcaption></figure>
       <figure class="wide"><img src="assets/shots/toolkit.webp" alt="Toolkit page listing open source repositories" loading="lazy" width="2160" height="1350"><figcaption>Toolkit: open source repositories worth knowing</figcaption></figure>
     </div>
   </section>

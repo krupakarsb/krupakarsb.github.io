@@ -58,7 +58,7 @@ h3 { margin: 0; font-size: 1rem; font-weight: 600; }
 .sample { margin: 1.75rem 0 0; padding: 1rem 1.2rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--glass);
           font: 400 .86rem var(--mono); overflow-x: auto; }
 .sample .p { color: var(--muted); }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin-top: 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 1rem; }
 .cards article, .work article { padding: 1.2rem 1.3rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--glass); backdrop-filter: blur(14px); }
 .cards p, .work p { margin: .35rem 0 0; color: var(--muted); font-size: .92rem; }
 .note { margin: 1.25rem 0 0; color: var(--muted); font-size: .9rem; }
