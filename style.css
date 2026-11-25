@@ -87,6 +87,7 @@ h3 { margin: 0; font-size: 1rem; font-weight: 600; }
 .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.75rem; }
 .shots figure { margin: 0; }
 .shots .wide { grid-column: 1 / -1; }
+#p-hasfragis .shots { grid-template-columns: minmax(0, 46rem); }
 .shots img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; }
 .shots figcaption { margin-top: .5rem; color: var(--muted); font-size: .86rem; }
 .work { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
