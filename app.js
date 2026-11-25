@@ -207,11 +207,10 @@
     bitpillars: "BitPillars: tiny pixel games, free in the browser.",
   };
   const go = (id) => {
-    const card = document.getElementById("p-" + id);
-    if (!card) return;
-    card.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
-    card.classList.add("flash");
-    setTimeout(() => card.classList.remove("flash"), 1600);
+    const tab = document.querySelector(`[data-tab="${id}"]`);
+    if (!tab) return;
+    tab.click();
+    document.getElementById("projects").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   };
   document.querySelectorAll(".tree .node").forEach((n) => {
     const id = n.dataset.node;
