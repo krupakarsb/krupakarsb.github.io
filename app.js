@@ -193,3 +193,33 @@
   });
   document.querySelectorAll("[data-try]").forEach((b) => b.addEventListener("click", () => { submit(b.dataset.try); input.focus({ preventScroll: true }); }));
 })();
+
+// Project tree: hover shows a line, click or Enter jumps to the project card.
+(() => {
+  const cap = document.querySelector("[data-tree-caption]");
+  if (!cap) return;
+  const base = cap.textContent;
+  const lines = {
+    zlang: "zlang: scope-checked commands, a tamper-evident log, signed evidence.",
+    manjim: "manjim: ISO 27001 and SOC 2 checks, a risk register, sealed reports.",
+    delbina: "delbina: cheaper AI context, secrets redacted, every change logged.",
+    hasfragis: "Hasfragis: tamper-evident forensic evidence. Team project.",
+    bitpillars: "BitPillars: tiny pixel games, free in the browser.",
+  };
+  const go = (id) => {
+    const card = document.getElementById("p-" + id);
+    if (!card) return;
+    card.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+    card.classList.add("flash");
+    setTimeout(() => card.classList.remove("flash"), 1600);
+  };
+  document.querySelectorAll(".tree .node").forEach((n) => {
+    const id = n.dataset.node;
+    const show = () => { cap.textContent = lines[id]; };
+    const hide = () => { cap.textContent = base; };
+    n.addEventListener("mouseenter", show); n.addEventListener("focus", show);
+    n.addEventListener("mouseleave", hide); n.addEventListener("blur", hide);
+    n.addEventListener("click", () => go(id));
+    n.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(id); } });
+  });
+})();
