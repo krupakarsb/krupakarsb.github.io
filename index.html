@@ -88,31 +88,31 @@
     <p class="lede">Each one is built around the same idea: actions are checked against rules, and what happened can be proven later.</p>
     <div class="work">
       <article id="p-zlang">
-        <span class="logo" role="img" aria-label="zlang logo"></span>
+        <img class="plogo mono" src="assets/logos/zlang-transparent.png" alt="zlang logo" width="52" height="52">
         <h3>zlang</h3><p class="kind">Personal project · source private</p>
         <p>A language and console for security work with governance built in. Every network command is checked against an approved scope, every action lands in a tamper-evident log, and a lockdown saves a signed evidence file.</p>
         <p class="links"><a href="#zlang">About</a><a href="#try">Try the demo</a></p>
       </article>
       <article id="p-manjim">
-        <span class="logo manjim" role="img" aria-label="manjim logo"></span>
+        <img class="plogo" src="assets/logos/manjim-transparent.png" alt="manjim logo" width="52" height="52">
         <h3>manjim</h3><p class="kind">Open source · on PyPI</p>
         <p>A GRC and IT audit CLI. It audits a project against checks mapped to ISO 27001:2022 Annex A and SOC 2, builds a risk register with inherent and residual risk and DPDP Act flags, and seals reports so any later change is detected.</p>
         <p class="links"><a href="https://github.com/manjim-dev/manjim" rel="noopener noreferrer">Repo</a><a href="https://pypi.org/project/manjim/" rel="noopener noreferrer">PyPI</a></p>
       </article>
       <article id="p-delbina">
-        <span class="logo delbina" role="img" aria-label="delbina logo"></span>
+        <img class="plogo" src="assets/logos/delbina-transparent.png" alt="delbina logo" width="52" height="52">
         <h3>delbina</h3><p class="kind">Open source · on PyPI</p>
         <p>Cuts the token cost of long AI chats and agents. It compresses old context, redacts secrets before they reach a model, and keeps a compaction log of every change. <b>delbina-sum</b> <span class="soon">In progress</span> is a small summarizer that keeps exact IDs, paths and versions.</p>
         <p class="links"><a href="https://github.com/delbina/delbina" rel="noopener noreferrer">Repo</a><a href="https://pypi.org/project/delbina/" rel="noopener noreferrer">PyPI</a><a href="https://github.com/delbina/delbina-sum" rel="noopener noreferrer">delbina-sum</a></p>
       </article>
       <article id="p-hasfragis">
-        <span class="logo hasfragis" role="img" aria-label="Hasfragis logo"></span>
+        <img class="plogo mono" src="assets/logos/hasfragis-transparent.png" alt="Hasfragis logo" width="52" height="52">
         <h3>Hasfragis</h3><p class="kind">Team project · core team member</p>
         <p>A digital forensics toolkit that makes evidence tamper-evident and checkable: file hashes, a Merkle root, a signed custody ledger and an incident timeline.</p>
         <p class="links"><a href="https://hasfragis.github.io" rel="noopener noreferrer">Website</a></p>
       </article>
       <article id="p-bitpillars">
-        <span class="logo bitpillars" role="img" aria-label="BitPillars logo"></span>
+        <img class="plogo" src="assets/logos/bitpillars-transparent.png" alt="BitPillars logo" width="52" height="52">
         <h3>BitPillars</h3><p class="kind">Game studio</p>
         <p>Tiny pixel games that are fast, chill and satisfying, all free to play in the browser.</p>
         <p class="links"><a href="https://krupakarsb.github.io/bitpillars/">Play</a></p>
@@ -122,7 +122,7 @@
 
   <section id="zlang" class="section">
     <div class="section-head">
-      <span class="logo" role="img" aria-label="zlang logo"></span>
+      <img class="plogo mono" src="assets/logos/zlang-transparent.png" alt="zlang logo" width="52" height="52">
       <div>
         <h2>zlang</h2>
         <p class="lede">My first own project: a short, readable language for security work, with a full-screen console and a local dashboard. It installs on Windows as a small tray app.</p>
@@ -169,9 +169,10 @@
     <h2>Experience</h2>
     <div class="rows">
       <article>
-        <p class="when">Sep batch</p>
+        <div class="when"><span>Internship</span>Sep 2026 batch</div>
         <div><h3>Cybersecurity Intern, UNLOX</h3>
-        <p>Capstone: designed and built centralized log monitoring and threat detection with the ELK Stack, bringing logs from Windows and Kali Linux endpoints into one server for monitoring, detection and review. Certificate of internship completion.</p></div>
+        <p>Capstone: designed and built a centralized log monitoring and threat detection system on the ELK Stack (Elasticsearch, Logstash, Kibana). Logs from Windows and Kali Linux endpoints flow into one server, where events are searched, filtered and reviewed in Kibana dashboards. Completed with a certificate of internship completion.</p>
+        <ul class="kw"><li>Log collection</li><li>Threat detection</li><li>Kibana dashboards</li><li>Windows and Linux endpoints</li></ul></div>
       </article>
     </div>
   </section>
@@ -179,19 +180,34 @@
   <section id="skills" class="section">
     <h2>Skills and learning</h2>
     <div class="rows">
-      <article><p class="when">Frameworks</p><p>ISO 27001:2022 · SOC 2 · DPDP Act · risk registers · audit evidence</p></article>
-      <article><p class="when">Security</p><p>Log monitoring · vulnerability assessment · digital forensics basics · networking · Linux</p></article>
-      <article><p class="when">Tools</p><p>Python · Git · GitHub Actions · PyPI packaging · ELK Stack · built with AI-assisted development</p></article>
+      <article>
+        <div class="when"><span>Governance</span>Risk and compliance</div>
+        <div><h3>Frameworks and audit practice</h3>
+        <p>Mapping technical checks to controls, scoring risk before and after treatment, and keeping evidence that holds up when someone checks it later.</p>
+        <ul class="kw"><li>ISO/IEC 27001:2022 Annex A</li><li>SOC 2 Trust Services Criteria</li><li>DPDP Act 2023</li><li>Risk registers</li><li>Audit evidence</li><li>Chain of custody</li></ul></div>
+      </article>
+      <article>
+        <div class="when"><span>Security</span>Operations and testing</div>
+        <div><h3>Monitoring, assessment and forensics</h3>
+        <p>Collecting and reviewing logs for threats, assessing systems for weaknesses, and handling evidence so it stays tamper-evident.</p>
+        <ul class="kw"><li>Log monitoring</li><li>Threat detection</li><li>Vulnerability assessment</li><li>Digital forensics basics</li><li>Networking</li><li>Linux</li></ul></div>
+      </article>
+      <article>
+        <div class="when"><span>Tools</span>Build and automate</div>
+        <div><h3>Tooling and delivery</h3>
+        <p>Building small, dependable command-line tools and shipping them as packages, built with AI-assisted development.</p>
+        <ul class="kw"><li>Python</li><li>Git</li><li>GitHub Actions</li><li>PyPI packaging</li><li>ELK Stack</li><li>SARIF reports</li></ul></div>
+      </article>
     </div>
     <h3 class="sub">Certifications, courses and labs</h3>
-    <ul class="list">
-      <li><a href="https://www.udemy.com/certificate/UC-7411b92f-67b3-411b-8fca-2a8654aba6c2/" rel="noopener noreferrer">AWS Cloud Practitioner CLF-C02 course</a><span>Udemy · Feb 2026</span></li>
-      <li>Vulnerability Assessment and Penetration Testing, industry-integrated program<span>GM University · Jul 2025</span></li>
-      <li><a href="https://www.cloudskillsboost.google/public_profiles/b478eca2-c6cd-421d-a5d9-c17e0866634b/badges/11717947" rel="noopener noreferrer">Networking Fundamentals on Google Cloud</a><span>Google Cloud Skills Boost · Sep 2024</span></li>
-      <li><a href="https://www.coursera.org/account/accomplishments/records/ELZ3V6QZ8D3S" rel="noopener noreferrer">Foundations of Cybersecurity</a><span>Google · Mar 2024</span></li>
-      <li>Ascent: Override.exe CTF<span>Scaler School of Technology · May 2026</span></li>
-      <li><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-OU2Q2KIAEF.pdf" rel="noopener noreferrer">Advent of Cyber 2025</a><span>TryHackMe · Dec 2025</span></li>
-    </ul>
+    <div class="rows certs">
+      <article><div class="when"><span>Course</span>Udemy · Feb 2026</div><p><a href="https://www.udemy.com/certificate/UC-7411b92f-67b3-411b-8fca-2a8654aba6c2/" rel="noopener noreferrer">AWS Cloud Practitioner CLF-C02 course</a></p></article>
+      <article><div class="when"><span>Program</span>GM University · Jul 2025</div><p>Vulnerability Assessment and Penetration Testing, industry-integrated program</p></article>
+      <article><div class="when"><span>Badge</span>Google Cloud · Sep 2024</div><p><a href="https://www.cloudskillsboost.google/public_profiles/b478eca2-c6cd-421d-a5d9-c17e0866634b/badges/11717947" rel="noopener noreferrer">Networking Fundamentals on Google Cloud</a></p></article>
+      <article><div class="when"><span>Certificate</span>Google · Mar 2024</div><p><a href="https://www.coursera.org/account/accomplishments/records/ELZ3V6QZ8D3S" rel="noopener noreferrer">Foundations of Cybersecurity</a></p></article>
+      <article><div class="when"><span>CTF</span>Scaler · May 2026</div><p>Ascent: Override.exe CTF, Scaler School of Technology</p></article>
+      <article><div class="when"><span>Lab</span>TryHackMe · Dec 2025</div><p><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-OU2Q2KIAEF.pdf" rel="noopener noreferrer">Advent of Cyber 2025</a></p></article>
+    </div>
   </section>
 
   <section id="contact" class="section contact">
